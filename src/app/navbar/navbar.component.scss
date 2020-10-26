@@ -1,0 +1,18 @@
+.navbar {
+  background-image: url("../../assets/navbar/desktop-navbar.png");
+  color: white;
+  height: 10vh;
+}
+.navbar >* * {
+  color: white;
+}
+.row {
+  flex-grow: 1
+}
+button{
+  font-size: 20px;
+  line-height: 24px;
+}
+mat-sidenav-container {
+  width: 100%;
+}

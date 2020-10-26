@@ -1,0 +1,52 @@
+<div class="container mt-5 mb-3 pt-5">
+  <div class="row">
+    <div class="col-12 project">
+      Projects
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-6 row">
+      <div class="col-12 title">
+        Kawer
+      </div>
+      <div class="col-12 description">
+        Complete serverless web application that allow normal users to make reservations for the local football fields,
+        owners to list theirs fields and manage the reservation.
+        <br>
+        This project is live and you could <a href="http://kawer.s3-website-us-east-1.amazonaws.com/">Visit Here</a>
+      </div>
+      <div class="col-6 mt-2 skills">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <div class="subtitle">
+                  Skills
+                </div>
+              </mat-panel-title>
+
+            </mat-expansion-panel-header>
+            <button *ngFor="let skill of skills" class="skill">
+              <img src="assets/skills/{{skill.toLowerCase()}}.png" alt=""> {{skill}}
+            </button>
+          </mat-expansion-panel>
+        </mat-accordion>
+
+      </div>
+      <div class="col-12 mt-2">
+        <div class="subtitle">
+          Key Features :
+        </div>
+        <mat-list>
+          <mat-list-item> API Gateway integration with Lambda Functions using Open API 3.0</mat-list-item>
+          <mat-list-item> Cognito Authentication with Role based Access (user, owner, admin)</mat-list-item>
+          <mat-list-item> Dynamo DB Transactions for reservations</mat-list-item>
+        </mat-list>
+      </div>
+    </div>
+    <div class="col-6  w-100">
+      <gallery [thumb]="false" [counter]="false" [imageSize]="'cover'"  id="mixedExample" gallerize></gallery>
+
+    </div>
+  </div>
+</div>

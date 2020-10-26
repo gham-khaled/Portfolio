@@ -1,0 +1,52 @@
+.background {
+  background-image: url("../../assets/presentation/desktop-presentation.png");
+  background-size: 100% 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  min-height: 90vh;
+
+  display: flex;
+  align-items: center;
+}
+
+.pdp {
+  border-radius: 20vh;
+  height: 40vh;
+}
+
+.background > * {
+  color: white;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 4em;
+  line-height: 2em;
+}
+.subtitle {
+  font-size: 2em;
+}
+.description {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.follow {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.social {
+  width: 42px;
+  height: 42px;
+}
+
+@media screen and (max-width: 768px) {
+  .title, .description, .social, .follow , .icons, .subtitle{
+    text-align: center;
+    margin: 10px;
+  }
+}
+
