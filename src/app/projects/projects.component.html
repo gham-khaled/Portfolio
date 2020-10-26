@@ -1,52 +1,51 @@
-<div class="container mt-5 mb-3 pt-5">
-  <div class="row">
-    <div class="col-12 project">
+<div class="container ">
+  <div class="row mt-5 mb-3 pt-5">
+    <div class="col-12 project ">
       Projects
     </div>
   </div>
-  <div class="row mt-5">
-    <div class="col-6 row">
-      <div class="col-12 title">
-        Kawer
-      </div>
-      <div class="col-12 description">
-        Complete serverless web application that allow normal users to make reservations for the local football fields,
-        owners to list theirs fields and manage the reservation.
-        <br>
-        This project is live and you could <a href="http://kawer.s3-website-us-east-1.amazonaws.com/">Visit Here</a>
-      </div>
-      <div class="col-6 mt-2 skills">
-        <mat-accordion>
-          <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                <div class="subtitle">
-                  Skills
-                </div>
-              </mat-panel-title>
+  <div *ngFor="let project of projects; let i = index" class="row no-gutters  mt-5">
+      <div class=" col-sm-6 col-12 mt-3 ">
+        <div class="row  no-gutters">
+          <div class="col-12  my-3 title">
+            {{project.name}}
+          </div>
+          <div class="col-12 my-2 description">
+            {{project.description}}
+            <div *ngIf="project.link"> This project is live and you could <a href="{{project.link}}" target="_blank">Visit Here</a></div>
+            <div *ngIf="project.confidential">Out of respect for my client confidentiality, no code sample could be provided.</div>
+          </div>
+          <div class="col-12 col-sm-6  mt-2  skills ">
+            <mat-accordion>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <div class="subtitle">
+                      Skills
+                    </div>
+                  </mat-panel-title>
 
-            </mat-expansion-panel-header>
-            <button *ngFor="let skill of skills" class="skill">
-              <img src="assets/skills/{{skill.toLowerCase()}}.png" alt=""> {{skill}}
-            </button>
-          </mat-expansion-panel>
-        </mat-accordion>
+                </mat-expansion-panel-header>
+                <button *ngFor="let skill of project.skills" class="skill">
+                  <img src="assets/skills/{{skill.toLowerCase()}}.png" alt=""> {{skill}}
+                </button>
+              </mat-expansion-panel>
+            </mat-accordion>
 
-      </div>
-      <div class="col-12 mt-2">
-        <div class="subtitle">
-          Key Features :
+          </div>
+          <div class="col-12 mt-2">
+            <div class="subtitle">
+              Key Features :
+            </div>
+            <mat-list>
+              <mat-list-item *ngFor="let feature of project.features"> {{feature}} </mat-list-item>
+            </mat-list>
+          </div>
         </div>
-        <mat-list>
-          <mat-list-item> API Gateway integration with Lambda Functions using Open API 3.0</mat-list-item>
-          <mat-list-item> Cognito Authentication with Role based Access (user, owner, admin)</mat-list-item>
-          <mat-list-item> Dynamo DB Transactions for reservations</mat-list-item>
-        </mat-list>
       </div>
+    <div class="col-sm-6 col-12 order-sm-2 order-first w-100 text-center">
+      <gallery [thumb]="false"  [counter]="true" [imageSize]="'contain'" id=" {{i}}" gallerize="{{i}}"  [items]="items[i]"></gallery>
     </div>
-    <div class="col-6  w-100">
-      <gallery [thumb]="false" [counter]="false" [imageSize]="'cover'"  id="mixedExample" gallerize></gallery>
-
-    </div>
+    <div class="col-12 mt-5 order-last" style="border: 1px solid #E4E4E4;"></div>
   </div>
 </div>

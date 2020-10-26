@@ -1,39 +1,34 @@
 import {Component, OnInit} from '@angular/core';
-import {Gallery, GalleryConfig, GalleryRef, ImageItem} from 'ng-gallery';
+import {Gallery, GalleryConfig, GalleryItem, GalleryRef, ImageItem} from 'ng-gallery';
+import {kawer} from './project/kawer';
+import {gps} from './project/gps';
+import {shifted} from './project/shifted';
+import {Project} from "./project.model";
+import {audit} from "./project/audit";
+import {ieg} from "./project/ieg";
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
-export class ProjectsComponent implements OnInit{
-  galleryId = 'mixedExample';
-  config: GalleryConfig = {
-    thumb: false,
-    imageSize: 'cover',
-    thumbHeight: 0,
-    disableThumb: true
+export class ProjectsComponent implements OnInit {
+  items: GalleryItem[] = [];
 
-  };
-  galleryRef: GalleryRef = this.gallery.ref(this.galleryId);
+  projects: Project[] = [kawer, shifted, gps, audit, ieg];
+
   constructor(private gallery: Gallery) {
   }
 
-  skills = [
-    'Python',
-    'Java',
-    'Docker'
-  ];
-
   ngOnInit(): void {
-    this.galleryRef.setConfig(this.config);
+    this.projects.map(project => {
+      const imageItems  = project.images.map(image => new ImageItem({src: image}));
+      // @ts-ignore
+      this.items.push(imageItems);
+    });
+    console.log(this.items);
 
-    this.galleryRef.addImage({
-      src: 'assets/projects/kawer/web.png',
-    });
-    this.galleryRef.addImage({
-      src: 'assets/projects/kawer/Kawer.png',
-    });
+
   }
 }
 

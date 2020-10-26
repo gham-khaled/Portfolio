@@ -14,6 +14,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {GalleryModule} from 'ng-gallery';
 import {LightboxModule} from 'ng-gallery/lightbox';
+import { CertificationsComponent } from './certifications/certifications.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {LightboxModule} from 'ng-gallery/lightbox';
     NavbarComponent,
     PresentationComponent,
     SkillsComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    CertificationsComponent
   ],
   imports: [
     BrowserModule,

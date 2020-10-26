@@ -38,7 +38,7 @@ $portfolio-theme: mat-light-theme((
 $custom-typography: mat-typography-config($font-family: '"Hind", sans-serif;');
 @include mat-core($custom-typography);
 
-html, body { height: 100%; }
+html, body { height: 100%; width: 100% }
 body { margin: 0; font-family:  "Hind", sans-serif; }
 * {
   font-family: "Hind" /* Replace with your custom font */, sans-serif !important;
@@ -46,4 +46,24 @@ body { margin: 0; font-family:  "Hind", sans-serif; }
 .material-icons{
   font-family: 'Material Icons', sans-serif !important;
 }
-
+.component-title {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 58px;
+  /* identical to box height */
+  text-align: center;
+  color: #0259B6;
+}
+.title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 29px;
+  color: #333333;
+}
+.subtitle {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  color: #333333;
+}

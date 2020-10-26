@@ -12,19 +12,24 @@
 .pdp {
   border-radius: 20vh;
   height: 40vh;
+  max-width: 100%;
 }
 
 .background > * {
-  color: white;
+  color: white ;
 }
 
 .title {
   font-weight: bold;
   font-size: 4em;
+  color: white ;
+
   line-height: 2em;
 }
 .subtitle {
   font-size: 2em;
+  color: white ;
+
 }
 .description {
   font-weight: 500;
@@ -48,5 +53,6 @@
     text-align: center;
     margin: 10px;
   }
+
 }
 

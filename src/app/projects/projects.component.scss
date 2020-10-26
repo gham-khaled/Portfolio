@@ -20,11 +20,17 @@
   max-width: 40px;
   margin-right: 10px ;
 }
-.subtitle {
-  font-weight: 500;
-}
-.title {
-  font-weight: 600;
-  font-size: 19px;
-  line-height: 30px
+
+@media screen and (max-width: 768px) {
+  //.title, .description, .social, .follow , .project, .subtitle{
+  //  text-align: center;
+  //}
+  .project {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  mat-list-item {
+    line-height: 20px;
+  }
 }
