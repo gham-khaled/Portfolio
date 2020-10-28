@@ -25,3 +25,9 @@ button {
     color: #FFFFFF;
 
 }
+@media screen and (max-width: 768px) {
+  .background {
+    background-image: url("../../assets/certification/mobile-certifications.png");
+  }
+
+}

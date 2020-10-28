@@ -1,6 +1,6 @@
 <div class="container ">
-  <div class="row mt-5 mb-3 pt-5">
-    <div class="col-12 project ">
+  <div class="row ">
+    <div class="col-12 project mt-sm-5 mt-0 ml-3 ml-sm-0 mb-3 pt-5">
       Projects
     </div>
   </div>
@@ -15,7 +15,7 @@
             <div *ngIf="project.link"> This project is live and you could <a href="{{project.link}}" target="_blank">Visit Here</a></div>
             <div *ngIf="project.confidential">Out of respect for my client confidentiality, no code sample could be provided.</div>
           </div>
-          <div class="col-12 col-sm-6  mt-2  skills ">
+          <div class="col-12 col-sm-9 pr-1  mt-2  skills ">
             <mat-accordion>
               <mat-expansion-panel>
                 <mat-expansion-panel-header>
@@ -26,8 +26,8 @@
                   </mat-panel-title>
 
                 </mat-expansion-panel-header>
-                <button *ngFor="let skill of project.skills" class="skill">
-                  <img src="assets/skills/{{skill.toLowerCase()}}.png" alt=""> {{skill}}
+                <button *ngFor="let skill of project.skills" class="skill mt-1">
+                  <img class= "img-fluid" src="assets/skills/{{skill.toLowerCase()}}" alt=""> {{skill}}
                 </button>
               </mat-expansion-panel>
             </mat-accordion>

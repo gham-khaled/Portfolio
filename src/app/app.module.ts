@@ -15,6 +15,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {GalleryModule} from 'ng-gallery';
 import {LightboxModule} from 'ng-gallery/lightbox';
 import { CertificationsComponent } from './certifications/certifications.component';
+import { NgxPageScrollModule } from 'ngx-page-scroll';
 
 @NgModule({
   declarations: [
@@ -25,17 +26,18 @@ import { CertificationsComponent } from './certifications/certifications.compone
     ProjectsComponent,
     CertificationsComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatExpansionModule,
-    GalleryModule,
-    LightboxModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatListModule,
+        MatExpansionModule,
+        GalleryModule,
+        LightboxModule,
+      NgxPageScrollModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

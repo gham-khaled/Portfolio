@@ -1,7 +1,8 @@
-.navbar {
+nav {
   background-image: url("../../assets/navbar/desktop-navbar.png");
   color: white;
   height: 10vh;
+
 }
 .navbar >* * {
   color: white;
@@ -16,3 +17,15 @@ button{
 mat-sidenav-container {
   width: 100%;
 }
+button:focus { outline: none; }
+
+//@media screen and (min-width: 768px) {
+//nav {
+//  top: -30px;
+//  position: fixed;
+//  width: 100%;
+//  z-index: 9999;
+//
+//}
+//}
+//

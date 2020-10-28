@@ -2,7 +2,7 @@ import {Project} from "../project.model";
 
 const projectName = 'Ecommerce Website';
 const description = 'User friendly Ecommerce Website with multiple features. Developed for local company during my internship ';
-const skills = ['Symfony', 'Bootstrap'];
+const skills = ['Symfony', 'Bootstrap', 'Mysql'];
 const features = ["Admin Panel to add and edit products"];
 const images = ["assets/projects/ieg/home.png", "assets/projects/ieg/contact.png"];
 const link = 'http://ieg.tn/';

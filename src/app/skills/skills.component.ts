@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-skills',
@@ -7,7 +7,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillsComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
+
+  backEndSkills = [
+    "Node JS",
+    "Python",
+    "Java",
+    "Express JS",
+    "Symfony",
+    "Docker"
+  ];
+  frontEndSkills = [
+    "Angular",
+    "React",
+    "Bootstrap"
+  ];
+  dataBaseSkills = [
+    "MongoDB",
+    "DynamoDB",
+    "MySQL"
+  ];
+  infrastructureSkills = [
+    "Terraform",
+    "AWS SAM",
+    "Cloudformation",
+    "Open API"
+  ];
+  cloudComputingSkills = [
+    "AWS Lambda",
+    "Fargate",
+    "Step Function",
+    "Cognito"
+  ];
   skills = [
     'Python',
     'Java',
@@ -16,6 +48,7 @@ export class SkillsComponent implements OnInit {
     'Mysql',
     'Fargate'
   ];
+
   ngOnInit(): void {
   }
 

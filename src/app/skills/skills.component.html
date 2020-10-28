@@ -1,15 +1,50 @@
-<div class="container-fluid background mx-0 px-0 mt-5 pt-5">
+<div  class="container-fluid background mx-0 px-0 mt-5 pt-5">
   <div class="row  mx-0 d-flex justify-content-center w-100">
     <div class="col-12 title text-center">
       Technical Skills
     </div>
     <div class="col-12 col-sm-6 mt-3 text-center description">
-      Experience in building containerized and serverless web applications, designing and implementing data pipelines
-      and building and deploying ML models
+      Experience in building containerized and serverless web applications
     </div>
-    <div class="col-12 text-center mt-3">
-      <button *ngFor="let skill of skills" class="skill">
-        <img src="assets/skills/{{skill.toLowerCase()}}.png" alt=""> {{skill}}
+    <div class="col-12 skill-name text-center mt-3">
+
+      Back End Development:
+      <br class="d-sm-none d-block">
+
+      <button *ngFor="let skill of backEndSkills" class="skill mt-2">
+        <img src="assets/skills/{{skill.toLowerCase()}}" alt=""> {{skill}}
+      </button>
+    </div>
+    <div class="col-12  skill-name text-center mt-3">
+        Front End Development:
+        <br class="d-sm-none d-block">
+
+        <button *ngFor="let skill of frontEndSkills" class="skill mt-2">
+          <img src="assets/skills/{{skill.toLowerCase()}}" alt=""> {{skill}}
+        </button>
+    </div>
+    <div class="col-12  skill-name text-center mt-3">
+        Database:
+        <br class="d-sm-none d-block">
+
+        <button *ngFor="let skill of dataBaseSkills" class="skill mt-2">
+          <img src="assets/skills/{{skill.toLowerCase()}}" alt=""> {{skill}}
+        </button>
+    </div>
+    <div class="col-12 skill-name text-center mt-3">
+      Infrastructure:
+      <br class="d-sm-none d-block">
+
+      <button *ngFor="let skill of infrastructureSkills" class="skill mt-2">
+        <img src="assets/skills/{{skill.toLowerCase()}}" alt=""> {{skill}}
+      </button>
+    </div>
+    <div class="col-12  skill-name text-center mt-3">
+      Cloud Computing:
+      <br class="d-sm-none d-block">
+
+      <button *ngFor="let skill of cloudComputingSkills" class="skill mt-2">
+        <img src="assets/skills/{{skill.toLowerCase()}}" alt=""> {{skill}}
       </button>
     </div>
   </div>
