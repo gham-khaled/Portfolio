@@ -16,6 +16,7 @@ import {GalleryModule} from 'ng-gallery';
 import {LightboxModule} from 'ng-gallery/lightbox';
 import { CertificationsComponent } from './certifications/certifications.component';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
     PresentationComponent,
     SkillsComponent,
     ProjectsComponent,
-    CertificationsComponent
+    CertificationsComponent,
+    FooterComponent
   ],
     imports: [
         BrowserModule,
