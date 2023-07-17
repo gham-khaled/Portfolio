@@ -32,5 +32,5 @@ jobs:
           aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Deploy Open API HTML Documentation
-        run: aws s3 sync dist/Portfolio s3://khaledghamgui.com
+      - name: Deploy To S3
+        run: aws s3 sync dist/portfolio s3://khaledghamgui.com
