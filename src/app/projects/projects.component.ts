@@ -1,11 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {Gallery, GalleryConfig, GalleryItem, GalleryRef, ImageItem} from 'ng-gallery';
+import {Gallery,  GalleryItem, GalleryRef, ImageItem} from 'ng-gallery';
 import {kawer} from './project/kawer';
 import {gps} from './project/gps';
-import {shifted} from './project/shifted';
 import {Project} from "./project.model";
-import {audit} from "./project/audit";
-import {ieg} from "./project/ieg";
+import {eullo} from "./project/eullo";
+import {serveron} from "./project/serveron";
+import {cloudCryptonic} from "./project/cloud-cryptonic";
+import {wayFinder} from "./project/wayfinder";
 
 @Component({
   selector: 'app-projects',
@@ -15,7 +16,7 @@ import {ieg} from "./project/ieg";
 export class ProjectsComponent implements OnInit {
   items: GalleryItem[] = [];
 
-  projects: Project[] = [kawer, shifted, gps, audit, ieg];
+  projects: Project[] = [ kawer, cloudCryptonic, serveron, eullo, wayFinder, gps];
 
   constructor(private gallery: Gallery) {
   }
@@ -26,7 +27,7 @@ export class ProjectsComponent implements OnInit {
       // @ts-ignore
       this.items.push(imageItems);
     });
-    console.log(this.items);
+    // console.log(this.items);
 
 
   }

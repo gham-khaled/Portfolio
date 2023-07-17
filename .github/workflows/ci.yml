@@ -1,0 +1,36 @@
+name: CI
+on:
+  push:
+    branches: [ dev, master, main ]
+env:
+
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY  }}
+  AWS_SECRET_ACCESS_KEY: ${{   secrets.AWS_SECRET_KEY  }}
+  AWS_DEFAULT_REGION: us-east-2
+  AWS_DEFAULT_OUTPUT: json
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: V2
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.14'
+      - name: npm dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.7"
+      - uses: aws-actions/setup-sam@v1
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Deploy Open API HTML Documentation
+        run: aws s3 sync dist/Portfolio s3://khaledghamgui.com

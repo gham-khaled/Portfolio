@@ -8,4 +8,4 @@ const features = ["Store and query user positions using Geo Hash library",
   "Selfie request for quarantined users"];
 const images = ["assets/projects/gps/GPS.jpg"];
 
-export const gps = new Project(projectName, description, skills, features, images, null, true);
+export const gps = new Project(projectName, description, skills, features, images, null, false);

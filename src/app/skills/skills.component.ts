@@ -14,13 +14,13 @@ export class SkillsComponent implements OnInit {
     "Node JS",
     "Python",
     "Java",
-    "Express JS",
-    "Symfony",
-    "Docker"
+    "Bash"
+
   ];
   frontEndSkills = [
     "Angular",
-    "React",
+    "Express JS",
+    "Flask",
     "Bootstrap"
   ];
   dataBaseSkills = [
@@ -32,7 +32,9 @@ export class SkillsComponent implements OnInit {
     "Terraform",
     "AWS SAM",
     "Cloudformation",
-    "Open API"
+    "Open API",
+    "Docker"
+
   ];
   cloudComputingSkills = [
     "AWS Lambda",

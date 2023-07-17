@@ -1,9 +1,11 @@
 import {Project} from "../project.model";
 
-const projectName = 'Audit Web Application (POC)';
-const description = 'Infrastructure auditing web application to assign, collect and process users reports. ';
-const skills = ['React', 'Python', 'Dynamodb', 'Terraform', 'AWS Lambda', 'Cognito', 'Open API'];
-const features = ["Cognito Authentication using AD", "CI/CD using Gitlab and Docker Integration", "Digital Signature"];
-const images = ["assets/projects/audit/audit.png", "assets/projects/audit/Inspio.png"];
+const projectName = 'Eullo, Secure Web Application';
+const description = 'Eullo is a secure chat web application that provides end-to-end encryption using asymmetric encryption and RSA key pairs.' +
+  ' It aims to provide a secure and private communication platform for users.';
+const skills = ['Angular', 'Terraform', 'Mysql'];
+const features = ["Admin Panel to add and edit products"];
+const images = ["assets/projects/ieg/home.png", "assets/projects/ieg/contact.png"];
+const link = 'http://ieg.tn/';
 
-export const audit = new Project(projectName, description, skills, features, images, null, false);
+export const ieg = new Project(projectName, description, skills, features, images, link, true);

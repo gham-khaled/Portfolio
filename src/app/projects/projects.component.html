@@ -7,13 +7,13 @@
   <div *ngFor="let project of projects; let i = index" class="row no-gutters  mt-5">
       <div class=" col-sm-6 col-12 mt-3 ">
         <div class="row  no-gutters">
-          <div class="col-12  my-3 title">
-            {{project.name}}
+          <div class="col-12  my-3 title" >
+
+          <div *ngIf="!project.link">{{project.name}}</div>
+          <a href="{{project.link}}" *ngIf="project.link">{{project.name}}</a>
           </div>
           <div class="col-12 my-2 description">
             {{project.description}}
-            <div *ngIf="project.link"> This project is live and you could <a href="{{project.link}}" target="_blank">Visit Here</a></div>
-            <div *ngIf="project.confidential">Out of respect for my client confidentiality, no code sample could be provided.</div>
           </div>
           <div class="col-12 col-sm-9 pr-1  mt-2  skills ">
             <mat-accordion>
@@ -37,9 +37,13 @@
             <div class="subtitle">
               Key Features :
             </div>
-            <mat-list>
-              <mat-list-item *ngFor="let feature of project.features"> {{feature}} </mat-list-item>
-            </mat-list>
+<!--            <mat-list>-->
+<!--              <mat-list-item *ngFor="let feature of project.features"> {{feature}} </mat-list-item>-->
+<!--            </mat-list>-->
+            <ul class="feature-list">
+              <li *ngFor="let feature of project.features" class="feature-item">{{ feature }}</li>
+              <br>
+            </ul>
           </div>
         </div>
       </div>

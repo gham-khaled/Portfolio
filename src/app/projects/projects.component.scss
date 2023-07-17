@@ -5,8 +5,17 @@
   color: #0259B6;
 }
 
+.feature-list {
+  list-style-type: disc;
+}
 
+.feature-list li {
+  margin-bottom: 10px;
+}
 
+.title{
+  font-size: x-large;
+}
 @media screen and (max-width: 768px) {
   //.title, .description, .social, .follow , .project, .subtitle{
   //  text-align: center;
