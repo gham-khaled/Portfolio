@@ -1,0 +1,38 @@
+<div
+  [ngStyle]="{
+    'background-image':
+      'linear-gradient(4deg, rgba(38,8,31,0.75) 30%, rgba(213,49,127,0.3) 45%, rgba(232,120,12,0.3) 100%), url(' +
+      article.image +
+      ')',
+    'background-size': 'cover',
+    'background-repeat': 'no-repeat'
+  }"
+  class="article-card h-100"
+>
+  <span class="badge badge-pill mb-4 badge-success custom-pill">{{
+    article.category
+  }}</span>
+
+  <div class="mt-5" [ngClass]="{ 'article-content': large }">
+    <div class="info-bar">
+      <div class="author-name d-flex align-items-center">
+        <mat-icon>person</mat-icon>
+        <span class="ml-1">Khaled Ghamgui</span>
+      </div>
+      <div class="publish-date d-flex align-items-center ml-3">
+        <mat-icon>date_range</mat-icon>
+        <span class="ml-1">2. june 2023</span>
+      </div>
+    </div>
+
+    <h3
+      class="mt-3"
+      [ngClass]="{
+        'large-article-title': large,
+        'small-article-title': !large
+      }"
+    >
+      {{ article.title }}
+    </h3>
+  </div>
+</div>

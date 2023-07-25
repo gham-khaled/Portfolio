@@ -1,0 +1,18 @@
+<div class="container background mb-5 mt-5">
+  <div class="row">
+    <div class="col-12 my-3 text-center">
+      <h1 class="title">Certifications</h1>
+    </div>
+  </div>
+  <div class="cert-grid">
+    <div
+      class="cert-card"
+      *ngFor="let certification of certifications; let i = index"
+    >
+      <app-certification-card
+        [certification]="certification"
+        [index]="i"
+      ></app-certification-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+.skillImage {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+.custom-pill-skill {
+  background: rgba(28, 86, 94, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.skill-name {
+  color: #54d3d4;
+  font-size: 1rem;
+  margin: 0px;
+}

@@ -1,0 +1,131 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="over" #sidenav>
+    <mat-nav-list>
+      <ng-container *ngIf="router.url === '/'; else otherRoutes">
+        <a
+          href="#skills"
+          pageScroll
+          [pageScrollDuration]="200"
+          mat-list-item
+          (click)="sidenav.close()"
+        >
+          Skills
+        </a>
+        <a
+          href="#projects"
+          pageScroll
+          [pageScrollDuration]="300"
+          mat-list-item
+          (click)="sidenav.close()"
+        >
+          Projects
+        </a>
+        <a
+          href="#certifications"
+          pageScroll
+          [pageScrollDuration]="500"
+          mat-list-item
+          (click)="sidenav.close()"
+        >
+          Certifications
+        </a>
+      </ng-container>
+
+      <ng-template #otherRoutes>
+        <a routerLink="/" mat-list-item (click)="sidenav.close()"> Skills </a>
+        <a routerLink="/" mat-list-item (click)="sidenav.close()"> Projects </a>
+        <a routerLink="/" mat-list-item (click)="sidenav.close()">
+          Certifications
+        </a>
+      </ng-template>
+
+      <a routerLink="/articles" mat-list-item (click)="sidenav.close()"
+        >Articles</a
+      >
+
+      <a (click)="sidenav.toggle()" mat-list-item>
+        <mat-icon>close</mat-icon>
+        Close
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content style="overflow: hidden">
+    <nav
+      class="navbar navbar-expand-lg"
+      [ngClass]="{ 'is-absolute': absolute }"
+    >
+      <div class="container p-0">
+        <div class="row align-items-center">
+          <div class="col-9 col-sm-1">
+            <a routerLink="/">
+              <img
+                id="headerLogo"
+                class="ml-4"
+                src="assets/navbar/logo.png"
+                width="42"
+                height="42"
+                alt=""
+              />
+            </a>
+          </div>
+          <div class="menu">
+            <ng-container *ngIf="router.url === '/'; else otherRoutesMenu">
+              <div>
+                <a href="#skills" pageScroll [pageScrollDuration]="200">
+                  <button mat-button>SKILLS</button>
+                </a>
+              </div>
+              <div>
+                <a href="#projects" pageScroll [pageScrollDuration]="300">
+                  <button mat-button>PROJECTS</button>
+                </a>
+              </div>
+              <div>
+                <a href="#certifications" pageScroll [pageScrollDuration]="500">
+                  <button mat-button>CERTIFICATIONS</button>
+                </a>
+              </div>
+            </ng-container>
+
+            <ng-template #otherRoutesMenu>
+              <div>
+                <a routerLink="/">
+                  <button mat-button>SKILLS</button>
+                </a>
+              </div>
+              <div>
+                <a routerLink="/">
+                  <button mat-button>PROJECTS</button>
+                </a>
+              </div>
+              <div>
+                <a routerLink="/">
+                  <button mat-button>CERTIFICATIONS</button>
+                </a>
+              </div>
+            </ng-template>
+
+<!--            <div>-->
+<!--              <a routerLink="/articles">-->
+<!--                <button mat-button>ARTICLES</button>-->
+<!--              </a>-->
+<!--            </div>-->
+          </div>
+
+          <div class="col-3 pl-4 d-sm-none d-block">
+            <button
+              mat-icon-button
+              color="accent"
+              (click)="sidenav.toggle()"
+              aria-label="Example icon button with a menu icon"
+            >
+              <mat-icon>menu</mat-icon>
+            </button>
+          </div>
+          <!-- Removed for brevity -->
+        </div>
+      </div>
+    </nav>
+  </mat-sidenav-content>
+</mat-sidenav-container>

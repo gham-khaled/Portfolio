@@ -25,12 +25,12 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: "3.7"
-      - uses: aws-actions/setup-sam@v1
-      - uses: aws-actions/configure-aws-credentials@v1
+      - uses: aws.png-actions/setup-sam@v1
+      - uses: aws.png-actions/configure-aws.png-credentials@v1
         with:
           aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
       - name: Deploy To S3
-        run: aws s3 sync dist/portfolio s3://khaledghamgui.com
+        run: aws.png s3 sync dist/portfolio s3://khaledghamgui.com

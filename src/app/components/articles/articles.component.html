@@ -1,0 +1,42 @@
+<div class="container background mt-5">
+  <div class="row">
+    <div class="col-12 my-3 text-center">
+      <h1 class="title mb-5">Articles</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-12 my-md-2">
+      <a (click)="goToArticle(0)">
+        <app-article [article]="articles[0]" [large]="true"></app-article>
+      </a>
+    </div>
+    <div class="col-lg-6 col-12">
+      <div class="row mb-3">
+        <div class="col-lg-6 col-12 my-md-2">
+          <a (click)="goToArticle(1)">
+            <app-article [article]="articles[1]"></app-article>
+          </a>
+        </div>
+        <div class="col-lg-6 col-12 my-md-2">
+          <a (click)="goToArticle(2)">
+            <app-article [article]="articles[2]"></app-article>
+          </a>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-lg-6 col-12 my-md-2">
+          <a (click)="goToArticle(3)">
+            <app-article [article]="articles[3]"></app-article>
+          </a>
+        </div>
+
+        <div class="col-lg-6 col-12 my-md-2">
+          <a (click)="goToArticle(4)">
+            <app-article [article]="articles[4]"></app-article>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

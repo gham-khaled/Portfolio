@@ -1,0 +1,103 @@
+<!-- Page Header-->
+<header
+  class="masthead"
+  [style.background-image]="'url(' + article.image + ')'"
+>
+  <div class="container position-relative px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="post-heading">
+          <h1>{{ article.title }}</h1>
+          <span class="meta">
+            Posted by
+            <a href="#!">Ghamgui Khaled</a>
+            on {{ article.date }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Post Content-->
+<article class="mb-4">
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <p>
+          {{ article.description }}
+        </p>
+        <p>
+          If you're just starting out with Terraform this is a simple lab to
+          learn how to provision an EC2 instance on Amazon Web Services. EC2
+          instances are virtual machines running on AWS, and a common component
+          of many infrastructure projects.
+        </p>
+        <p>
+          Terraform is an infrastructure as code tool that lets you define
+          infrastructure resources in human-readable configuration files that
+          you can version, reuse, and share. You can then use a consistent
+          workflow to safely and efficiently provision and manage your
+          infrastructure throughout its lifecycle.
+        </p>
+        <p>
+          A Chinese tale tells of some men sent to harm a young girl who, upon
+          seeing her beauty, become her protectors rather than her violators.
+          That's how I felt seeing the Earth for the first time. I could not
+          help but love and cherish her.
+        </p>
+        <p>
+          For those who have seen the Earth from space, and for the hundreds and
+          perhaps thousands more who will, the experience most certainly changes
+          your perspective. The things that we share in our world are far more
+          valuable than those which divide us.
+        </p>
+        <h2 class="section-heading">Benefits of Using Terraform</h2>
+        <p>
+          You'll need tools that can automate the majority of your work if
+          you're going to be an effective cloud Engineer, and Terraform will
+          help you do that.
+        </p>
+        <p>
+          Terraform is OpenSource and platform-agnostic. This simply means it's
+          free and can be used on multi cloud platforms, it's not limited to one
+          cloud provider.
+        </p>
+        <blockquote class="blockquote">
+          Terraform is Declarative. Since the Terraform language is declarative,
+          it defines an expected outcome rather than the precise processes that
+          must be taken to achieve it.
+        </blockquote>
+
+        <h2 class="section-heading">Set your Environment Variable.</h2>
+        <p>
+          From a security standpoint we do not store our password within our
+          codes. This is why it is necessary to set our environment. Storing
+          secrets in code is a mistake that may cause a credential to be
+          unintentionally exposed.
+        </p>
+        <a href="#!"
+          ><img
+            class="img-fluid"
+            src="assets/img/terrraform-blog.png"
+            alt="..."
+        /></a>
+        <span class="caption text-muted"
+          >Access Keys are long-term credentials that should NOT be stored in
+          code.</span
+        >
+        <p>
+          The terraform block contains Terraform settings, including the
+          required providers Terraform will use to provision your
+          infrastructure. For each provider, the source attribute defines an
+          optional hostname, a namespace, and the provider type.
+        </p>
+        <p>
+          Terraform installs providers from the Terraform Registry by default.
+          In this example configuration, the aws provider's source is defined as
+          hashicorp/aws, which is shorthand for
+          registry.terraform.io/hashicorp/aws.
+        </p>
+      </div>
+    </div>
+  </div>
+</article>

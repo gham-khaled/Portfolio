@@ -1,0 +1,12 @@
+<div class="skill-card">
+  <mat-icon class="icon-category"> {{ category.icon }} </mat-icon>
+  <h3 class="category-title">{{ category.name }}</h3>
+  <div class="skill-list">
+    <div class="skill-parent" *ngFor="let skill of category.skills">
+      <div class="skill-container">
+        <img src="{{ skill.image }}" alt="" class="skillImage" />
+      </div>
+      <h3 class="skill-title">{{ skill.name }}</h3>
+    </div>
+  </div>
+</div>

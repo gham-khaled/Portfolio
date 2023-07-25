@@ -1,0 +1,36 @@
+.cert-image {
+  width: 200px;
+  height: 200px;
+}
+.cert-card {
+  width: 200px;
+}
+.cert-title {
+  color: #fff;
+  font-size: 1.125rem;
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.8125rem; /* 161.111% */
+  width: 225px;
+}
+
+.cert-subtitle {
+  color: #fff;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.625rem; /* 162.5% */
+}
+
+.obt-title {
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem; /* 150% */
+}
+
+.hide-cert {
+  visibility: hidden;
+}

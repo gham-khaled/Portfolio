@@ -1,0 +1,61 @@
+nav {
+  color: white;
+  height: 10vh;
+}
+.navbar > * * {
+  color: white;
+}
+.row {
+  flex-grow: 1;
+}
+button {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.menu {
+  margin-left: auto;
+  display: flex;
+  justify-content: space-around;
+}
+mat-sidenav-container {
+  width: 100%;
+}
+button:focus {
+  outline: none;
+}
+
+#headerLogo {
+  filter: brightness(0) invert(1);
+}
+
+@media screen and (max-width: 576px) {
+  .menu {
+    display: none;
+  }
+}
+
+//@media screen and (min-width: 768px) {
+//nav {
+//  top: -30px;
+//  position: fixed;
+//  width: 100%;
+//  z-index: 9999;
+//
+//}
+//}
+//
+
+.is-absolute {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.mat-drawer-container-has-open {
+  position: absolute;
+  height: 100vh;
+}

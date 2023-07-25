@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row text-center">
+    <div class="col-12 project mt-sm-5 mt-0 ml-3 ml-sm-0 mb-3 pt-5">
+      <h1 class="title">Projects</h1>
+    </div>
+    <div class="text-center mx-auto description">
+      Overview of my latest projects
+    </div>
+  </div>
+  <div
+    *ngFor="let project of projects; let i = index"
+    class="row no-gutters mt-5"
+  >
+    <app-project-card
+      [project]="project"
+      [items]="items[i]"
+      [gallerize]="i"
+      [index]="i"
+    ></app-project-card>
+  </div>
+</div>

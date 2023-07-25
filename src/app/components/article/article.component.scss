@@ -1,0 +1,45 @@
+.article-card {
+  position: relative;
+  padding: 30px;
+  cursor: pointer;
+  border-radius: 1.75rem;
+}
+.info-bar {
+  display: flex;
+  color: white;
+}
+
+.large-article-title {
+  max-width: 430px;
+  color: white;
+}
+.badge-success {
+  float: right;
+}
+
+.small-article-title {
+  font-size: 1rem;
+  color: white;
+}
+
+.article-content {
+  position: absolute;
+  bottom: 120px;
+}
+.custom-pill {
+  border-radius: 2.0625rem;
+  background: #1c565e;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 14px;
+}
+
+@media (max-width: 992px) {
+  .article-content {
+    position: unset !important;
+  }
+  .my-md-2 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}

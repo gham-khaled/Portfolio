@@ -1,0 +1,27 @@
+<div class="container background px-0 mt-5 pt-5">
+  <div class="row mx-0 d-flex justify-content-center w-100">
+    <div class="col-12 title text-center">Technical Skills</div>
+    <div class="col-12 col-sm-6 mt-3 text-center description">
+      Overview of my versatile skillset
+    </div>
+  </div>
+  <div class="row skill-row d-flex mt-5 justify-content-center">
+    <div class="col-12 col-md-6">
+      <app-skill-card [category]="categories.frontend"> </app-skill-card>
+    </div>
+
+    <div class="col-12 skill-row col-md-6">
+      <app-skill-card [category]="categories.database"> </app-skill-card>
+    </div>
+  </div>
+  <div class="row d-flex skill-row mt-3 justify-content-center">
+    <div class="col-12">
+      <app-skill-card [category]="categories.backend"> </app-skill-card>
+    </div>
+  </div>
+  <div class="row d-flex skill-row mt-3 justify-content-center">
+    <div class="col-12">
+      <app-skill-card [category]="categories.infrastructure"> </app-skill-card>
+    </div>
+  </div>
+</div>
