@@ -9,7 +9,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GalleryModule } from 'ng-gallery';
 import { LightboxModule } from 'ng-gallery/lightbox';
-import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CertificationsComponent } from './components/certifications/certifications.component';
@@ -59,7 +58,6 @@ import { BlogComponent } from './pages/blog/blog.component';
     MatExpansionModule,
     GalleryModule,
     LightboxModule,
-    NgxPageScrollModule,
     AppRoutingModule,
   ],
   providers: [],

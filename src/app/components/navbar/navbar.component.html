@@ -4,8 +4,6 @@
       <ng-container *ngIf="router.url === '/'; else otherRoutes">
         <a
           href="#skills"
-          pageScroll
-          [pageScrollDuration]="200"
           mat-list-item
           (click)="sidenav.close()"
         >
@@ -13,8 +11,6 @@
         </a>
         <a
           href="#projects"
-          pageScroll
-          [pageScrollDuration]="300"
           mat-list-item
           (click)="sidenav.close()"
         >
@@ -22,8 +18,6 @@
         </a>
         <a
           href="#certifications"
-          pageScroll
-          [pageScrollDuration]="500"
           mat-list-item
           (click)="sidenav.close()"
         >
@@ -72,17 +66,17 @@
           <div class="menu">
             <ng-container *ngIf="router.url === '/'; else otherRoutesMenu">
               <div>
-                <a href="#skills" pageScroll [pageScrollDuration]="200">
+                <a href="#skills">
                   <button mat-button>SKILLS</button>
                 </a>
               </div>
               <div>
-                <a href="#projects" pageScroll [pageScrollDuration]="300">
+                <a href="#projects">
                   <button mat-button>PROJECTS</button>
                 </a>
               </div>
               <div>
-                <a href="#certifications" pageScroll [pageScrollDuration]="500">
+                <a href="#certifications">
                   <button mat-button>CERTIFICATIONS</button>
                 </a>
               </div>

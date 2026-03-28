@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ArticleService } from '../../services/article/article.service';
 
 @Component({
+  standalone: false,
   selector: 'app-articles',
   templateUrl: './articles.component.html',
   styleUrls: ['./articles.component.scss'],

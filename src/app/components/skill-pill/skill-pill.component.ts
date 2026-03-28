@@ -6,6 +6,7 @@ type Skill = {
 };
 
 @Component({
+  standalone: false,
   selector: 'app-skill-pill',
   templateUrl: './skill-pill.component.html',
   styleUrls: ['./skill-pill.component.scss'],

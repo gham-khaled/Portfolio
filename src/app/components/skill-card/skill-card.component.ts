@@ -13,6 +13,7 @@ type Category = {
 };
 
 @Component({
+  standalone: false,
   selector: 'app-skill-card',
   templateUrl: './skill-card.component.html',
   styleUrls: ['./skill-card.component.scss'],

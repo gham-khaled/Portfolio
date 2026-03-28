@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ArticleService } from '../../services/article/article.service';
 
 @Component({
+  standalone: false,
   selector: 'app-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss'],

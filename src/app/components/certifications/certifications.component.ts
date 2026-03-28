@@ -6,6 +6,7 @@ import { istqb } from './certification/istqb';
 import { terraform } from './certification/terraform';
 
 @Component({
+  standalone: false,
   selector: 'app-certifications',
   templateUrl: './certifications.component.html',
   styleUrls: ['./certifications.component.scss'],

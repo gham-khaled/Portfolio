@@ -4,6 +4,7 @@ import { GalleryItem } from 'ng-gallery';
 import { Project } from '../projects/project.model';
 
 @Component({
+  standalone: false,
   selector: 'app-project-card',
   templateUrl: './project-card.component.html',
   styleUrls: ['./project-card.component.scss'],

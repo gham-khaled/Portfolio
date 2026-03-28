@@ -9,6 +9,7 @@ import { wayFinder } from './project/wayfinder';
 import { GalleryItem, ImageItem } from 'ng-gallery';
 
 @Component({
+  standalone: false,
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
@@ -22,16 +23,15 @@ export class ProjectsComponent implements OnInit {
     wayFinder,
     gps,
   ];
-  items: GalleryItem[] = [];
+  items: GalleryItem[][] = [];
 
   constructor() {}
 
   ngOnInit(): void {
-    this.projects.map((project) => {
+    this.projects.forEach((project) => {
       const imageItems = project.images.map(
         (image) => new ImageItem({ src: image })
       );
-      // @ts-ignore
       this.items.push(imageItems);
     });
   }
