@@ -6,7 +6,6 @@ import { gps } from './project/gps';
 import { kawer } from './project/kawer';
 import { serveron } from './project/serveron';
 import { wayFinder } from './project/wayfinder';
-import { GalleryItem, ImageItem } from 'ng-gallery';
 
 @Component({
   standalone: false,
@@ -23,16 +22,8 @@ export class ProjectsComponent implements OnInit {
     wayFinder,
     gps,
   ];
-  items: GalleryItem[][] = [];
 
   constructor() {}
 
-  ngOnInit(): void {
-    this.projects.forEach((project) => {
-      const imageItems = project.images.map(
-        (image) => new ImageItem({ src: image })
-      );
-      this.items.push(imageItems);
-    });
-  }
+  ngOnInit(): void {}
 }

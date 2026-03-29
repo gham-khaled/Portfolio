@@ -1,46 +1,45 @@
-<div class="project-container mt-4">
-  <div class="row">
-    <div class="col-12 col-xl-6">
-      <gallery
-        class="customGallery mx-auto"
-        [thumbs]="false"
-        [counter]="true"
-        gallerize="{{ index }}"
-        [imageSize]="'contain'"
-        id="{{ index }}"
-        [items]="items"
-      ></gallery>
-    </div>
-
-    <div class="col-12 col-xl-6">
-      <div class="row project-content">
-        <div class="d-flex mb-3 project-intro-container">
-          <h1 class="project-title">{{ project.name }}</h1>
-          <a [href]="project.link" class="ml-4">
-            <mat-icon class="open-link">open_in_new</mat-icon>
-          </a>
+<mat-card class="project-card mt-4">
+  <div class="row align-items-start">
+    <div class="col-12 col-lg-5">
+      <div class="image-carousel">
+        <img [src]="currentImage" [alt]="project.name" class="project-image" />
+        <div class="carousel-controls" *ngIf="hasMultipleImages">
+          <button class="carousel-btn" (click)="prevImage()">
+            <mat-icon>chevron_left</mat-icon>
+          </button>
+          <button class="carousel-btn" (click)="nextImage()">
+            <mat-icon>chevron_right</mat-icon>
+          </button>
         </div>
-
-        <div>
-          <p class="project-description">
-            {{ project.description }}
-          </p>
-
-          <span class="feature"> Key features </span>
-
-          <ul>
-            <li class="feature" *ngFor="let feature of project.features">
-              {{ feature }}
-            </li>
-          </ul>
-        </div>
-
-        <div class="tech-container mt-3 col-12">
-          <div *ngFor="let skill of project.skills" class="tech-title">
-            <app-skill-pill [skill]="skill"></app-skill-pill>
-          </div>
+        <div class="carousel-dots" *ngIf="hasMultipleImages">
+          <span
+            *ngFor="let img of project.images; let i = index"
+            class="dot"
+            [class.active]="i === currentImageIndex"
+            (click)="currentImageIndex = i"
+          ></span>
         </div>
       </div>
     </div>
+
+    <div class="col-12 col-lg-7">
+      <mat-card-header class="project-header">
+        <mat-card-title class="project-title">{{ project.name }}</mat-card-title>
+        <a [href]="project.link" target="_blank" class="open-link-btn">
+          <mat-icon>open_in_new</mat-icon>
+        </a>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p class="project-description">{{ project.description }}</p>
+        <span class="feature-label">Key features</span>
+        <ul class="feature-list">
+          <li *ngFor="let feature of project.features">{{ feature }}</li>
+        </ul>
+        <div class="tech-container">
+          <app-skill-pill *ngFor="let skill of project.skills" [skill]="skill"></app-skill-pill>
+        </div>
+      </mat-card-content>
+    </div>
   </div>
-</div>
+</mat-card>

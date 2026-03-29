@@ -9,13 +9,13 @@
   </div>
   <div
     *ngFor="let project of projects; let i = index"
-    class="row no-gutters mt-5"
+    class="row no-gutters mt-4"
   >
-    <app-project-card
-      [project]="project"
-      [items]="items[i]"
-      [gallerize]="i"
-      [index]="i"
-    ></app-project-card>
+    <div class="col-12">
+      <app-project-card
+        [project]="project"
+        [index]="i"
+      ></app-project-card>
+    </div>
   </div>
 </div>

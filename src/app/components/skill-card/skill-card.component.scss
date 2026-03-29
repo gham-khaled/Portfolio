@@ -1,70 +1,70 @@
-.skill-card {
-  border-radius: 2.1875rem;
+::ng-deep .skill-card.mat-mdc-card {
   background: #2d2e32;
-  padding: 2.6rem;
-  box-sizing: border-box;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  height: 100%;
+  border: 1px solid #3a3b3f;
+}
+
+.icon-category {
+  color: #0259b6;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-title {
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0;
 }
 
 .skill-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-}
-.icon-category {
-  font-size: 3rem;
-  margin-bottom: 4rem;
-  color: white;
-}
-
-.category-title {
-  color: #fff;
-  text-align: left;
-  font-size: 1.7625rem;
-  margin-bottom: 3rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.5rem; /* 72.727% */
-}
-
-.skill-container:hover {
-  border: 2px solid #0259b6;
-}
-
-.skill-container:hover {
-  background-color: white;
-}
-
-.skill-container:hover .skillImage {
-  filter: grayscale(100%);
-}
-
-.skill-title {
-  color: #fff;
-  text-align: center;
-  margin-top: 30px;
-  font-size: 1.625rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 1.5rem; /* 92.308% */
-}
-
-.skillImage {
-  flex-shrink: 0;
-  height: 50px;
-  width: 50px;
-  text-align: center;
-  object-fit: contain;
-}
-
-.skill-container {
-  padding: 30px;
-  border-radius: 50%;
-  border: 2px solid #565656;
-  margin: 0 auto;
-  text-align: center;
-  max-width: 115px;
+  gap: 1.25rem;
+  margin-top: 1rem;
 }
 
 .skill-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+}
+
+.skill-container {
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 14px;
+  border: 2px solid #3a3b3f;
+  background: #23242a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: #0259b6;
+    background: #2a2f3a;
+    transform: translateY(-2px);
+  }
+}
+
+.skillImage {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.skill-title {
+  color: #b0b0b0;
   text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.2;
 }

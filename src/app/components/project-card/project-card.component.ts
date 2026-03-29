@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Input } from '@angular/core';
-import { GalleryItem } from 'ng-gallery';
+import { Component, Input, OnInit } from '@angular/core';
 import { Project } from '../projects/project.model';
 
 @Component({
@@ -10,11 +8,32 @@ import { Project } from '../projects/project.model';
   styleUrls: ['./project-card.component.scss'],
 })
 export class ProjectCardComponent implements OnInit {
-  @Input() items: GalleryItem[] = [];
   @Input() project: Project;
   @Input() index: number;
+
+  currentImageIndex = 0;
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  get currentImage(): string {
+    return this.project?.images?.[this.currentImageIndex] || '';
+  }
+
+  get hasMultipleImages(): boolean {
+    return this.project?.images?.length > 1;
+  }
+
+  nextImage(): void {
+    if (this.project?.images?.length) {
+      this.currentImageIndex = (this.currentImageIndex + 1) % this.project.images.length;
+    }
+  }
+
+  prevImage(): void {
+    if (this.project?.images?.length) {
+      this.currentImageIndex = (this.currentImageIndex - 1 + this.project.images.length) % this.project.images.length;
+    }
+  }
 }

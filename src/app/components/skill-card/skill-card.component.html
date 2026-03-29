@@ -1,12 +1,16 @@
-<div class="skill-card">
-  <mat-icon class="icon-category"> {{ category.icon }} </mat-icon>
-  <h3 class="category-title">{{ category.name }}</h3>
-  <div class="skill-list">
-    <div class="skill-parent" *ngFor="let skill of category.skills">
-      <div class="skill-container">
-        <img src="{{ skill.image }}" alt="" class="skillImage" />
+<mat-card class="skill-card">
+  <mat-card-header>
+    <mat-icon mat-card-avatar class="icon-category" fontIcon="{{ category.icon }}"></mat-icon>
+    <mat-card-title class="category-title">{{ category.name }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="skill-list">
+      <div class="skill-parent" *ngFor="let skill of category.skills">
+        <div class="skill-container">
+          <img [src]="skill.image" [alt]="skill.name" class="skillImage" />
+        </div>
+        <span class="skill-title">{{ skill.name }}</span>
       </div>
-      <h3 class="skill-title">{{ skill.name }}</h3>
     </div>
-  </div>
-</div>
+  </mat-card-content>
+</mat-card>

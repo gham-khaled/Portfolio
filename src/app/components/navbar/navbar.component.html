@@ -3,23 +3,20 @@
     <mat-nav-list>
       <ng-container *ngIf="router.url === '/'; else otherRoutes">
         <a
-          href="#skills"
           mat-list-item
-          (click)="sidenav.close()"
+          (click)="scrollTo('skills'); sidenav.close()"
         >
           Skills
         </a>
         <a
-          href="#projects"
           mat-list-item
-          (click)="sidenav.close()"
+          (click)="scrollTo('projects'); sidenav.close()"
         >
           Projects
         </a>
         <a
-          href="#certifications"
           mat-list-item
-          (click)="sidenav.close()"
+          (click)="scrollTo('certifications'); sidenav.close()"
         >
           Certifications
         </a>
@@ -33,10 +30,6 @@
         </a>
       </ng-template>
 
-      <a routerLink="/articles" mat-list-item (click)="sidenav.close()"
-        >Articles</a
-      >
-
       <a (click)="sidenav.toggle()" mat-list-item>
         <mat-icon>close</mat-icon>
         Close
@@ -44,7 +37,7 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <mat-sidenav-content style="overflow: hidden">
+  <mat-sidenav-content>
     <nav
       class="navbar navbar-expand-lg"
       [ngClass]="{ 'is-absolute': absolute }"
@@ -66,17 +59,17 @@
           <div class="menu">
             <ng-container *ngIf="router.url === '/'; else otherRoutesMenu">
               <div>
-                <a href="#skills">
+                <a (click)="scrollTo('skills')" style="cursor: pointer">
                   <button mat-button>SKILLS</button>
                 </a>
               </div>
               <div>
-                <a href="#projects">
+                <a (click)="scrollTo('projects')" style="cursor: pointer">
                   <button mat-button>PROJECTS</button>
                 </a>
               </div>
               <div>
-                <a href="#certifications">
+                <a (click)="scrollTo('certifications')" style="cursor: pointer">
                   <button mat-button>CERTIFICATIONS</button>
                 </a>
               </div>
@@ -99,12 +92,6 @@
                 </a>
               </div>
             </ng-template>
-
-<!--            <div>-->
-<!--              <a routerLink="/articles">-->
-<!--                <button mat-button>ARTICLES</button>-->
-<!--              </a>-->
-<!--            </div>-->
           </div>
 
           <div class="col-3 pl-4 d-sm-none d-block">
@@ -112,12 +99,11 @@
               mat-icon-button
               color="accent"
               (click)="sidenav.toggle()"
-              aria-label="Example icon button with a menu icon"
+              aria-label="Toggle navigation menu"
             >
               <mat-icon>menu</mat-icon>
             </button>
           </div>
-          <!-- Removed for brevity -->
         </div>
       </div>
     </nav>

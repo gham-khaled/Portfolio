@@ -1,6 +1,90 @@
-@media (max-width: 767px) {
-  // styles for mobile devices go here
-  .skill-row {
-    margin-top: 30px;
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 0 15px;
+}
+
+::ng-deep .skill-card.mat-mdc-card {
+  background: #2d2e32;
+  border-radius: 1rem;
+  border: 1px solid #3a3b3f;
+  padding: 1.25rem;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.category-icon {
+  color: #0259b6;
+  font-size: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+::ng-deep .category-title.mat-mdc-card-title {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  gap: 0.75rem;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #3a3b3f;
+  }
+}
+
+.skill-image {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.skill-name {
+  color: #d0d0d0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  flex: 1;
+  white-space: nowrap;
+}
+
+.proficiency {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.proficiency-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3a3b3f;
+  transition: background 0.2s;
+
+  &.filled {
+    background: #0259b6;
+  }
+}
+
+@media (max-width: 991px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -1,36 +1,72 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+::ng-deep .cert-card.mat-mdc-card {
+  background: #2d2e32;
+  border-radius: 1rem;
+  border: 1px solid #3a3b3f;
+  padding: 1.5rem;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cert-image-wrapper {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
 .cert-image {
-  width: 200px;
-  height: 200px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
-.cert-card {
-  width: 200px;
+
+.cert-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .cert-title {
   color: #fff;
-  font-size: 1.125rem;
-  text-align: center;
-  font-style: normal;
+  font-size: 0.95rem;
   font-weight: 600;
-  line-height: 1.8125rem; /* 161.111% */
-  width: 225px;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
 }
 
 .cert-subtitle {
+  color: #9da5b4;
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.cert-date {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+}
+
+.cert-actions {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+::ng-deep .verify-btn.mat-mdc-unelevated-button {
+  background: #0259b6;
   color: #fff;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.625rem; /* 162.5% */
-}
-
-.obt-title {
-  color: rgba(255, 255, 255, 0.87);
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.5rem; /* 150% */
-}
-
-.hide-cert {
-  visibility: hidden;
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
