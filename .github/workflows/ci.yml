@@ -34,4 +34,4 @@ jobs:
           aws-region: us-east-1
 
       - name: Deploy to S3
-        run: aws s3 sync dist/portfolio s3://khaledghamgui.com --delete
+        run: aws s3 sync dist/portfolio s3://khaledghamgui.portfolio --delete
