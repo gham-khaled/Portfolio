@@ -46,13 +46,13 @@
 }
 
 .cert-subtitle {
-  color: #9da5b4;
+  color: #b8bfc9;
   font-size: 0.8rem;
   margin-bottom: 0.25rem;
 }
 
 .cert-date {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 0.75rem;
 }
 
@@ -61,12 +61,20 @@
   padding-top: 1rem;
 }
 
-::ng-deep .verify-btn.mat-mdc-unelevated-button {
+.verify-btn {
   background: #0259b6;
   color: #fff;
+  border: none;
   border-radius: 2rem;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #0370d6;
+  }
 }

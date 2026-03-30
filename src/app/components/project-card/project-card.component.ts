@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { Project } from '../projects/project.model';
 
 @Component({
@@ -12,6 +12,7 @@ export class ProjectCardComponent implements OnInit {
   @Input() index: number;
 
   currentImageIndex = 0;
+  lightboxOpen = false;
 
   constructor() {}
 
@@ -25,15 +26,30 @@ export class ProjectCardComponent implements OnInit {
     return this.project?.images?.length > 1;
   }
 
-  nextImage(): void {
+  nextImage(event?: Event): void {
+    event?.stopPropagation();
     if (this.project?.images?.length) {
       this.currentImageIndex = (this.currentImageIndex + 1) % this.project.images.length;
     }
   }
 
-  prevImage(): void {
+  prevImage(event?: Event): void {
+    event?.stopPropagation();
     if (this.project?.images?.length) {
       this.currentImageIndex = (this.currentImageIndex - 1 + this.project.images.length) % this.project.images.length;
     }
+  }
+
+  openLightbox(): void {
+    this.lightboxOpen = true;
+  }
+
+  closeLightbox(): void {
+    this.lightboxOpen = false;
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscape(): void {
+    this.closeLightbox();
   }
 }

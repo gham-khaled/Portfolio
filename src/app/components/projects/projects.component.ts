@@ -6,6 +6,7 @@ import { gps } from './project/gps';
 import { kawer } from './project/kawer';
 import { serveron } from './project/serveron';
 import { wayFinder } from './project/wayfinder';
+import { lambdaCostAnalysis } from './project/lambda-cost-analysis';
 
 @Component({
   standalone: false,
@@ -15,6 +16,7 @@ import { wayFinder } from './project/wayfinder';
 })
 export class ProjectsComponent implements OnInit {
   projects: Project[] = [
+    lambdaCostAnalysis,
     kawer,
     cloudCryptonic,
     serveron,

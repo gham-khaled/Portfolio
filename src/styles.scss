@@ -42,6 +42,26 @@ body {
   font-family: "Material Icons", sans-serif !important;
 }
 
+/* Override Bootstrap dark text colors for dark theme */
+.text-muted {
+  color: #b0b5bc !important;
+}
+
+/* Ensure Angular Material card text is white on dark backgrounds */
+.mat-mdc-card-title {
+  color: #fff !important;
+}
+
+.mat-mdc-card-content {
+  color: #d0d0d0 !important;
+}
+
+/* Override mat-flat-button primary color for dark theme */
+.mat-mdc-unelevated-button.mat-primary {
+  --mdc-filled-button-container-color: #0259b6;
+  --mdc-filled-button-label-text-color: #fff;
+}
+
 .title {
   color: #fff;
   text-align: center;

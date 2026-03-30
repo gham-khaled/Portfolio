@@ -1,17 +1,20 @@
 <mat-card class="project-card mt-4">
   <div class="row align-items-start">
     <div class="col-12 col-lg-5">
-      <div class="image-carousel">
+      <div class="image-carousel" (click)="openLightbox()">
         <img [src]="currentImage" [alt]="project.name" class="project-image" />
+        <div class="zoom-hint">
+          <mat-icon>zoom_in</mat-icon>
+        </div>
         <div class="carousel-controls" *ngIf="hasMultipleImages">
-          <button class="carousel-btn" (click)="prevImage()">
+          <button class="carousel-btn" (click)="prevImage($event)">
             <mat-icon>chevron_left</mat-icon>
           </button>
-          <button class="carousel-btn" (click)="nextImage()">
+          <button class="carousel-btn" (click)="nextImage($event)">
             <mat-icon>chevron_right</mat-icon>
           </button>
         </div>
-        <div class="carousel-dots" *ngIf="hasMultipleImages">
+        <div class="carousel-dots" *ngIf="hasMultipleImages" (click)="$event.stopPropagation()">
           <span
             *ngFor="let img of project.images; let i = index"
             class="dot"
@@ -43,3 +46,30 @@
     </div>
   </div>
 </mat-card>
+
+<!-- Lightbox overlay -->
+<div class="lightbox-overlay" *ngIf="lightboxOpen" (click)="closeLightbox()">
+  <button class="lightbox-close" (click)="closeLightbox()">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <div class="lightbox-content" (click)="$event.stopPropagation()">
+    <img [src]="currentImage" [alt]="project.name" class="lightbox-image" />
+  </div>
+
+  <button *ngIf="hasMultipleImages" class="lightbox-nav prev" (click)="prevImage($event)">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+  <button *ngIf="hasMultipleImages" class="lightbox-nav next" (click)="nextImage($event)">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+
+  <div class="lightbox-dots" *ngIf="hasMultipleImages" (click)="$event.stopPropagation()">
+    <span
+      *ngFor="let img of project.images; let i = index"
+      class="lightbox-dot"
+      [class.active]="i === currentImageIndex"
+      (click)="currentImageIndex = i"
+    ></span>
+  </div>
+</div>
