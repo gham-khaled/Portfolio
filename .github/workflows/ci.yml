@@ -1,36 +1,37 @@
-name: CI
+name: Build & Deploy
+
 on:
   push:
-    branches: [ dev, master, main ]
-env:
+    branches: [master, main]
 
-  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY  }}
-  AWS_SECRET_ACCESS_KEY: ${{   secrets.AWS_SECRET_KEY  }}
-  AWS_DEFAULT_REGION: us-east-2
-  AWS_DEFAULT_OUTPUT: json
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     environment: V2
     steps:
       - uses: actions/checkout@v4
-      - name: Set up node.js
+
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: npm dependencies
-        run: npm install
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
       - name: Build
-        run: npm run build
-      - uses: actions/setup-python@v5
+        run: npm run build -- --configuration production
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
         with:
-          python-version: "3.12"
-      - uses: aws-actions/setup-sam@v2
-      - uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: us-east-1
 
-      - name: Deploy To S3
-        run: aws s3 sync dist/portfolio s3://khaledghamgui.com
+      - name: Deploy to S3
+        run: aws s3 sync dist/portfolio s3://khaledghamgui.com --delete
