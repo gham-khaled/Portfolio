@@ -1,27 +1,50 @@
-# Portfolio
+# Portfolio — Khaled Ghamgui
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.7.
+Personal portfolio website showcasing my skills, projects, and certifications as a Cloud Engineer.
 
-## Development server
+**Live:** [ghamguikhaled.com](https://ghamguikhaled.com)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Tech Stack
 
-## Code scaffolding
+- **Framework:** Angular 19
+- **UI:** Angular Material (M2 dark theme), Bootstrap 4 grid
+- **Language:** TypeScript 5.6
+- **Testing:** Playwright (e2e with screenshots)
+- **CI/CD:** GitHub Actions with AWS OIDC authentication
+- **Hosting:** AWS S3
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started
 
-## Build
+```bash
+# Install dependencies
+npm ci
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+# Start dev server
+ng serve
 
-## Running unit tests
+# Production build
+ng build --configuration production
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Run e2e tests
+npx playwright test
+```
 
-## Running end-to-end tests
+## Project Structure
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+src/
+  app/
+    components/     # Reusable UI components (skill cards, project cards, etc.)
+    pages/          # Route pages (home, blog)
+    services/       # Shared services
+  assets/
+    skills/         # Skill icons (PNG/SVG)
+    projects/       # Project screenshots
+  styles.scss       # Global styles and Material theme
+e2e/
+  playwright.test.ts  # Visual regression and functional tests
+```
 
-## Further help
+## Deployment
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Pushes to `master` trigger a GitHub Actions workflow that builds the project and syncs to S3 using OIDC — no static AWS credentials stored.
